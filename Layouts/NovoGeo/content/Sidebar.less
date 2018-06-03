@@ -1,0 +1,202 @@
+﻿.sidebar {
+    width: @sidebar-width;
+    background-color: @sidebar-color;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 1em @sidebar-shadow-color;
+    box-sizing: border-box;
+
+    .brand {
+        img {
+            width: 100%;
+        }
+    }
+
+    .logged-user {
+        background-color: @primary-color;
+        color: @sidebar-text-color;
+        font-size: 90%;
+        padding: 0;
+        box-shadow: 0 0 10px solid 1px darken(@sidebar-color, 20%);
+        color: lighten(@sidebar-text-color, 30%);
+        line-height: 3.5em;
+
+        .fa-user {
+            background-color: darken(@primary-color, 12%);
+            font-size: 180%;
+            margin-right: .5em;
+            float: left;
+            color: lighten(@sidebar-text-color, 15%);
+            padding: .5em .6em .5em .5em;
+        }
+
+        .fa-gear {
+            margin-right: .5em;
+        }
+
+        .dropdown {
+            float: right;
+            font-size: 140%;
+
+            .dropdown-menu {
+                a {
+                    color: #555;
+
+                    &:hover {
+                        color: lighten(@sidebar-text-color, 90%);
+                        background-color: @primary-color;
+                        transform: none;
+                    }
+                }
+            }
+
+            a {
+                color: lighten(@sidebar-text-color, 90%);
+                display: block;
+                transition: all 100ms ease-in;
+
+                &:hover, &:focus, &:active {
+                    color: lighten(@sidebar-text-color, 90%);
+                    transform: scale(1.2);
+                }
+            }
+
+
+            li a {
+                font-size: 90%;
+            }
+        }
+
+        .btn {
+            width: 10em;
+        }
+    }
+
+    ul.layers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        &:hover {
+            background-color: lighten(@sidebar-color, 5%);
+        }
+
+        li {
+            display: block;
+            border-bottom: solid 1px darken(@sidebar-color, 20%);
+
+            .title {
+                padding: .8em .4em .8em 0;
+            }
+
+            a {
+                font-size: 90%;
+                color: @sidebar-text-color;
+                font-weight: 600;
+                display: block;
+
+                &:hover, &:focus {
+                    text-decoration: none;
+                }
+            }
+
+            .fa-caret-right {
+                padding: 0 .6em;
+                color: lighten(@sidebar-text-color, 40%);
+                cursor: pointer;
+                font-size: 130%;
+                vertical-align: middle;
+                float: left;
+                transition: transform 200ms ease-in;
+
+                &:hover {
+                    color: lighten(@sidebar-text-color, 20%);
+                }
+            }
+
+            &.expanded .fa-caret-right {
+                transform: rotate(90deg);
+            }
+
+
+
+            .switch {
+                background-color: @inactive-layer-pin-color;
+                height: 1.1em;
+                width: 1.1em;
+                margin-top: .3em;
+                margin-right: .4em;
+                border-radius: 50%;
+                display: block;
+                transition: background-color 200ms ease-in;
+            }
+
+            &.active .switch {
+                background-color: @active-layer-pin-color;
+            }
+
+            .layer-props {
+                background-color: darken(@sidebar-color, 20%);
+                color: @sidebar-text-color;
+                font-size: 85%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 100ms linear;
+
+                .row {
+                    border-bottom: solid 1px @sidebar-color;
+                    margin: 0 .3em;
+
+                    &:first-child {
+                        margin-top: .3em;
+                    }
+
+                    &:last-child {
+                        border: 0;
+                        margin-bottom: .3em;
+                    }
+
+                    & div {
+                        border-right: solid 1px @sidebar-color;
+                        padding: .7em;
+
+                        .btn-primary {
+                            color: @sidebar-text-color;
+                            background-color: @sidebar-color;
+                            border-color: darken(@sidebar-color, 20%);
+                            font-weight: 700;
+                            width: 7em;
+                            font-size: 90%;
+
+                            &:hover {
+                                background-color: lighten(@sidebar-color, 10);
+                            }
+                        }
+
+                        &:last-child {
+                            border: 0;
+                        }
+
+                        h3 {
+                            font-size: 80%;
+                            font-weight: 800;
+                            margin: 0;
+                            color: @secondary-color;
+                            text-transform: uppercase;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            &.expanded .layer-props {
+                max-height: 18em;
+            }
+        }
+    }
+}

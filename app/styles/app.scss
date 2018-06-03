@@ -1,0 +1,27 @@
+@import 'ember-bootstrap/bootstrap';
+@import 'font-awesome';
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
+
+@import 'supernice';
+@import 'admin';
+@import 'site';
+@import 'sidebar';
+@import 'login';
+@import 'errors';
+@import 'forms';
+@import 'entity-box';
+@import 'alteracoes';
+
+.cesium-viewer-bottom {
+  display: none!important
+}
+
+.modal-body {
+  max-height: 80vh;
+  overflow: auto;
+}
+.ember-radio-button {
+  margin-right: 5px;
+}

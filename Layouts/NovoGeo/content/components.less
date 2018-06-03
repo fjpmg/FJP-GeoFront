@@ -1,0 +1,111 @@
+﻿.category-select {
+    height: 25em;
+    width: 100%;
+    padding: .5em;
+    margin: 0;
+    list-style: none;
+    background-color: @component-color;
+    margin-top: .5em;
+    border: solid 1px @component-border-color;
+    overflow-y: scroll;
+
+    li {
+        a {
+            display: block;
+            font-size: 90%;
+            color: @component-text-color;
+            padding: .5em;
+            font-weight: 500;
+
+            i {
+            }
+
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+                color: darken(@component-text-color, 20%);
+                background-color: @component-border-color;
+            }
+
+            &:before {
+                font-family: fontawesome;
+                content: '\f07b';
+                font-size: 110%;
+                margin-right: .5em;
+                color: @secondary-color;
+            }
+        }
+
+        &.active {
+
+            a:before {
+                content: '\f07c';
+            }
+
+            ul {
+                display: block;
+            }
+
+            ul li a:before {
+                content: '\f041';
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0 0 0 0em;
+        display: none;
+
+        li a {
+            padding-left: 2.4em;
+        }
+
+        li.selected a {
+            background-color: @component-border-color;
+        }
+    }
+}
+
+.item-select {
+    height: 25em;
+    width: 100%;
+    padding: .5em;
+    margin: 0;
+    list-style: none;
+    background-color: @component-color;
+    margin-top: .5em;
+    border: solid 1px @component-border-color;
+    overflow-y: scroll;
+
+    li {
+        a {
+            display: block;
+            font-size: 90%;
+            color: @component-text-color;
+            padding: .5em;
+            font-weight: 500;
+
+
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+                color: darken(@component-text-color, 20%);
+                background-color: @component-border-color;
+            }
+
+            &:before {
+                font-family: fontawesome;
+                content: '\f096 ';
+                font-size: 110%;
+                margin-right: .5em;
+                color: @secondary-color;
+            }
+        }
+
+        &.selected {
+
+            a:before {
+                content: '\f046';
+            }
+        }
+    }
+}

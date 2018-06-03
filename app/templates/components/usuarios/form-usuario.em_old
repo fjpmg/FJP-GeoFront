@@ -1,0 +1,44 @@
+form id="signup-form" submit='criarNovo'
+  .content-container
+    .row
+      .col-md-7: .form-group
+        label for="nomeCompleto" Nome Completo
+        =input class="form-control" type="text" value=usuario.nomeCompleto id="nomeCompleto"
+        each usuario.errors.nomeCompleto as |error|
+          span class="has-error" = error.message
+      .col-md-5: .form-group
+        label for="nomeAmigavel" Nome Amigavel
+        =input class="form-control" type="text" value=usuario.nomeAmigavel id="nomeAmigavel"
+        each usuario.errors.nomeAmigavel as |error|
+          span class="has-error" = error.message
+    .row
+      .col-md-5: .form-group
+        label for="cpf" CPF
+        =input class="form-control cpf" type="text" value=usuario.cpf id="cpf"
+        each usuario.errors.cpf as |error|
+          span class="has-error" = error.message
+
+      .col-md-5: .form-group
+        label for="telefone" Telefone
+        =input class="form-control telefone" type="text" value=usuario.telefone id="telefone"
+        each usuario.errors.telefone as |error|
+          span class="has-error" = error.message
+      .col-md-2: .form-group
+        label for="perfil" Perfil
+        select class="form-control" id="perfil" onchange={action (mut usuario.perfil) value="target.value"} value="target.value"
+          option value='u' selected={eq 'u' newUser.perfil} Usuario
+          option value='t' selected={eq 't' newUser.perfil} Técnico
+          option value='a' selected={eq 'a' newUser.perfil} Administrador
+    .row
+      .col-md-4: .form-group
+        label for="email" Email
+        =input class="form-control" type="email" value=usuario.email id="email"
+        each usuario.errors.email as |error|
+          span class="has-error" = error.message
+      .col-md-4: .form-group
+        label for="password" Senha (padrão '123456')
+        =input class="form-control" type="text" value=usuario.password id="variedade"
+        each usuario.errors.password as |error|
+          span class="has-error" = error.message
+    .btn-area
+      input.btn.btn-default type="submit"

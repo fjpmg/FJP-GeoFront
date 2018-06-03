@@ -1,0 +1,131 @@
+﻿body > .search-bar {
+    box-sizing: border-box;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    display: block;
+    width: 30em;
+
+    input {
+        border: 0;
+        background-color: @component-color;
+        display: block;
+        width: 100%;
+        padding: .6em 2em .6em .4em;
+        color: @component-text-color;
+        font-size: 130%;
+        font-family: 'roboto', sans-serif;
+        font-weight: 500;
+        outline: none;
+    }
+
+    .fa-search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 130%;
+        color: lighten(@component-text-color, 10%);
+        line-height: 2.5em;
+        margin-right: .5em;
+    }
+
+    ul.result {
+        display: none;
+        list-style: none;
+        padding: 0;
+        border-top: solid 1px darken(@component-border-color, 10%);
+        background-color: @component-border-color;
+
+        li {
+            a {
+                display: block;
+                padding: .5em;
+                border-bottom: dotted 1px darken(@component-border-color, 10%);
+                color: @component-text-color;
+
+                i {
+                    font-size: 150%;
+                    vertical-align: middle;
+                    padding-right: .5em;
+                    color: #1b9389;
+                }
+
+                &:hover {
+                    background-color: darken(@component-border-color, 10%);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+   
+}
+
+
+.sidebar .search-bar {
+    box-sizing: border-box;
+    border-bottom: solid 1px #111;
+    position: relative;
+    display: none;
+
+    input {
+        border: 0;
+        background-color: darken(@sidebar-color, 10%);
+        display: block;
+        width: 100%;
+        padding: .9em 2em .9em .4em;
+        color: #fff;
+        font-size: 130%;
+        font-family: 'roboto', sans-serif;
+        font-weight: 500;
+        outline: none;
+    }
+
+    i {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 130%;
+        color: lighten(@component-text-color, 10%);
+        line-height: 3.1em;
+        margin-right: .5em;
+    }
+
+
+    ul.result {
+        display: none;
+        list-style: none;
+        padding: 0;
+        border-top: solid 1px darken(@component-border-color, 10%);
+        background-color: @component-border-color;
+        position:absolute;
+        z-index: 100000;
+        width: 100%;
+        li {
+            a {
+                display: block;
+                padding: .5em;
+                border-bottom: dotted 1px darken(@component-border-color, 10%);
+                color: @component-text-color;
+
+                i {
+                    font-size: 150%;
+                    vertical-align: middle;
+                    padding-right: .5em;
+                    color: #1b9389;
+                    position: static;
+                    line-height: 1em;
+                }
+
+                &:hover {
+                    background-color: darken(@component-border-color, 10%);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+body.show-result > .search-bar .result, body.show-result .sidebar .search-bar .result{
+    display: block;
+}

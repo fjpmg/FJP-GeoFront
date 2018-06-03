@@ -1,0 +1,27 @@
+<p>Município</p>
+<table class="table table-sm table-hover">
+  <tbody>
+    <tr>
+      <td>Nome</td>
+      <td>{{item.nome}}</td>
+    </tr>
+    <tr>
+      <td>Código IBGE</td>
+      <td>{{item.codIbge}}</td>
+    </tr>
+    <tr>
+      <td>Área</td>
+      <td>{{item.area}}</td>
+    </tr>
+    <tr>
+      <td>Área Café</td>
+      <td>{{item.areaCafe}}</td>
+    </tr>
+    {{#if item.premio}}
+      <tr>
+        <td>Premiações</td>
+        <td>{{item.premio}}</td>
+      </tr>
+    {{/if}}
+  </tbody>
+</table>
